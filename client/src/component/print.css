@@ -1,0 +1,28 @@
+/* print.css */
+@media print {
+    .print-container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 800px;
+      background-color: white;
+    }
+  
+    .print-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .print-container th {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+  
+    .print-container td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  }
+  

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-placeholder::placeholder {
+    color: black;
+  }
+
+  .red-border {
+    border-color: red;
+  }
+  .profile-image-container {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .profile-image-container input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* print.css */
