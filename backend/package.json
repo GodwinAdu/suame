@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "server": "nodemon server.js"
+    "start": "nodemon server.js"
   },
   "engines": {
     "node": ">=14.20.1"
