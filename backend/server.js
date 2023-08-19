@@ -56,13 +56,13 @@ async function sendSMS(phoneNumber, message) {
 
 // Usage Example:
 // Replace 'userPhoneNumber' with the user's phone number and 'Your message here' with the actual message.
-sendSMS('+233551556650', 'Our Boss Is Adu Junio7 ')
-  .then((result) => {
-    // Handle success if needed
-  })
-  .catch((error) => {
-    // Handle error if needed
-  });
+// sendSMS('+233551556650', 'Our Boss Is Adu Junio7 ')
+//   .then((result) => {
+//     // Handle success if needed
+//   })
+//   .catch((error) => {
+//     // Handle error if needed
+//   });
  
 
 app.listen(PORT, () => {
