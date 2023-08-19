@@ -31,7 +31,7 @@ const Monthly = ({userId}) => {
 
     const fetchData = async (year, month) => {
         try {
-          const response = await axios.get(`http://localhost:4000/api/reportMonth`, {
+          const response = await axios.get(`https://suame-backend.onrender.com/api/reportMonth`, {
             params: {
               year,
               month,

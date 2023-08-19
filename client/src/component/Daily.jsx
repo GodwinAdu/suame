@@ -37,7 +37,7 @@ const Daily = ({ userId }) => {
         .padStart(2, "0")}`;
       // Make your API call here to fetch data for the given date
       const response = await axios.get(
-        `http://localhost:4000/api/report?date=${formattedDate}&&userId=${userId}`
+        `https://suame-backend.onrender.com/api/report?date=${formattedDate}&&userId=${userId}`
       );
       // Access data from the response object
       const data = response.data;

@@ -4,7 +4,7 @@ import axios from "axios";
 // authenticate user
 export async function authenticate(email){
   try {
-     return await axios.post(`http://localhost:4000/api/authenticate`,{email})
+     return await axios.post(`https://suame-backend.onrender.com/api/authenticate`,{email})
   } catch (error) {
     return {error:"email doestn't exist ...!"}
   }
@@ -13,7 +13,7 @@ export async function authenticate(email){
 // get user details
 export async function getUser(email){
   try {
-    const {data} = await axios.get(`http://localhost:4000/api/user/${email}`)
+    const {data} = await axios.get(`https://suame-backend.onrender.com/api/user/${email}`)
     return {data}
   } catch (error) {
     return {error: "User doesn't exist ..."}
@@ -24,7 +24,7 @@ export async function getUser(email){
 // get user details
 export async function getGroupUser(overseerProfile){
   try {
-    const { data } = await axios.get(`http://localhost:4000/api/getGroupUser`);
+    const { data } = await axios.get(`https://suame-backend.onrender.com/api/getGroupUser`);
     return {data}
   } catch (error) {
     return {error: "User doesn't exist ..."}
@@ -34,7 +34,7 @@ export async function getGroupUser(overseerProfile){
 // get user details for profile
 export async function getUserProfile({userId}){
   try {
-    const {data} = await axios.get(`http://localhost:4000/api/userProfile/${userId}`)
+    const {data} = await axios.get(`https://suame-backend.onrender.com/api/userProfile/${userId}`)
     return {data}
   } catch (error) {
     return {error: "User doesn't exist ..."}
@@ -45,7 +45,7 @@ export async function getUserProfile({userId}){
 export async function registerUser(credentials) {
     try {
       const { data,status } = await axios.post(
-        `http://localhost:4000/api/register`,
+        `https://suame-backend.onrender.com/api/register`,
         credentials
       );
       // let { firstName, email } = credentials;
@@ -63,7 +63,7 @@ export async function registerUser(credentials) {
 export async function login(email,password){
     try {
           const { data } = await axios.post(
-            `http://localhost:4000/api/login`,
+            `https://suame-backend.onrender.com/api/login`,
             {email,password}
             );
           return Promise.resolve({data})
@@ -79,7 +79,7 @@ export async function login(email,password){
 export async function createOrUpdateReport(values){
   try {
     const { data } = await axios.post(
-      `http://localhost:4000/api/report`,
+      `https://suame-backend.onrender.com/api/report`,
       values
     )
 
@@ -94,7 +94,7 @@ export async function createOrUpdateReport(values){
 export async function updateUser(token, response) {
   try {
     const data = await axios.put(
-      'http://localhost:4000/api/updateUser',
+      'https://suame-backend.onrender.com/api/updateUser',
       response,
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -107,12 +107,12 @@ export async function updateUser(token, response) {
 // generate otp
 export async function generateOTP(){
   try {
-    const {data : {code},status } = await axios.get(`http://localhost:4000/api/generateOTP`,{params: {email}})
+    const {data : {code},status } = await axios.get(`https://suame-backend.onrender.com/api/generateOTP`,{params: {email}})
 
     if(status === 200 ){
       let { data : {email}} = await getUser({email})
       let text = `Your password recovery OTP is ${code}. Verify and recover your password`;
-      await axios.post(`http://localhost:4000/api/registerMail`,{firName, userEmail:email, text, subject:"Password Recovery OTP"})
+      await axios.post(`https://suame-backend.onrender.com/api/registerMail`,{firName, userEmail:email, text, subject:"Password Recovery OTP"})
       return Promise.resolve({code})
     }
   } catch (error) {

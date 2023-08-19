@@ -30,7 +30,7 @@ const YearlyReport = () => {
     
       const fetchData = async (year) => {
         try {
-          const response = await axios.get(`http://localhost:4000/api/reportYear`, {
+          const response = await axios.get(`https://suame-backend.onrender.com/api/reportYear`, {
             params: {
               year,
               userId: userInfo?.userId,
